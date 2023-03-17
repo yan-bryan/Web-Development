@@ -18,7 +18,6 @@ html {
 }
 
 
-
 .main-welcome {
   position: fixed;
   bottom: 0;
@@ -46,6 +45,14 @@ html {
 
 }
 
+.registration-input-fields {
+  display: grid;
+  grid-auto-flow: row;
+  width: fit-content;
+  gap: 4px;
+  
+}
+
 body {
   background-color: whitesmoke;
 
@@ -63,13 +70,7 @@ ul li a{
 
 }
 
-.input-fields {
-  display: grid;
-  grid-auto-flow: row;
-  width: fit-content;
-  gap: 4px;
-  
-}
+
 
 .check-boxes{
   margin: 8px 0px;
