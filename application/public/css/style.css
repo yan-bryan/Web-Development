@@ -1,3 +1,16 @@
+:root{
+  --footer-header-bg: black;
+  --text-color:white;
+
+}
+
+*
+*::after,
+*::before{
+  box-sizing: border-box;
+
+}
+
 html {
   font-size: 100%;
   font-family:Arial, Helvetica, sans-serif;
@@ -8,6 +21,63 @@ html {
 body {
   background-color: whitesmoke;
 
+}
+
+nav ul{
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+
+}
+
+ul li a{
+  color: var(--text-color);
+
+}
+
+.input-fields {
+  display: grid;
+  grid-auto-flow: row;
+  width: fit-content;
+  gap: 4px;
+}
+
+.check-boxes{
+  margin: 8px 0px;
+
+
+}
+
+.check-boxes label a{
+  color:blue;
+
+
+} 
+
+.submit-button {
+  width: fit-content;
+  box-shadow: -2px 4px 4px black;
+
+}
+
+
+.site-footer {
+  color: var(--text-color);
+  background-color: var(--footer-header-bg);
+  text-align: center;
+  margin: 8px 0px;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+
+h1{
+  color: var(--text-color);
+
+}
+
+header{
+  background-color: var(--footer-header-bg);   
+  
 }
 
 

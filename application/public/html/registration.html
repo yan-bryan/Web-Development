@@ -6,7 +6,7 @@
     </head>
     <body>
         <header>
-            <h1>CSC 317 Website</h1>
+            <h1 style="margin: 0%;">CSC 317 Website</h1>
             <nav>
                 <ul>
                     <li><a href="Index.html">Home</a></li>
@@ -20,34 +20,46 @@
         </header>
 
         <main>
-            <h2>Registration</h2>
+            <h2>Registration Form</h2>
 
             <form>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username">
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <div class="input-fields">
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username">
 
-                <label for="confirm password">Confirm password</label>
-                <input type="password" name="confirm password" id="confirm password" placeholder="Confirm password">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email">
 
-                <br>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password">
 
-                <label for="i am 13+ years of age">I am 13+ years of age</label>
-                <input type="checkbox" name="i am 13+ years of age" id="i am 13+ years of age" placeholder="I am 13+ years of age">
+                    <label for="confirm password">Confirm password</label>
+                    <input type="password" name="confirm password" id="confirm password" placeholder="Confirm password">
+                
+                </div>
+                
+                <div class="check-boxes">
 
-                <label for="accept TOS and Privacy"> <a href="#" > Accept TOS and Privacy </a></label>
-                <input type="checkbox" name="accept TOS and Privacy" id="accept TOS and Privacy" placeholder="Accept TOS and Privacy">
+                    <label for="i am 13+ years of age">I am 13+ years of age.</label>
+                    <input type="checkbox" name="i am 13+ years of age" id="i am 13+ years of age" placeholder="I am 13+ years of age">
 
-                <input type="submit" value="Submit">
+                    <br>
+
+                    <label for="accept TOS and Privacy"> Do you accept the <a href="#" > Privacy Rules </a> and <a href="#"> Terms of Service</a> for using the website? </label>
+                    <input type="checkbox" name="accept TOS and Privacy" id="accept TOS and Privacy" placeholder="Accept TOS and Privacy">
+                
+                </div>
+
+                <div class="submit-button">
+                    <input type="submit" value="Submit">
+                </div>
+
             </form>
         </main>
 
-        <footer>
+        <footer class="site-footer">
             Bryan Yan &copy; 2023
         </footer>
     </body>
