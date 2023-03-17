@@ -18,6 +18,34 @@ html {
 }
 
 
+
+.main-welcome {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  width: 100%;
+  padding: 20px;
+}
+
+.login-registration-form{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+
+}
+
+.login-inputs {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 4px;
+
+}
+
 body {
   background-color: whitesmoke;
 
@@ -40,6 +68,7 @@ ul li a{
   grid-auto-flow: row;
   width: fit-content;
   gap: 4px;
+  
 }
 
 .check-boxes{

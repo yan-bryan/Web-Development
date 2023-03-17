@@ -20,17 +20,24 @@
         </header>
 
         <main>
-            <h2>Login Form</h2>
+            
+            <video autoplay muted loop id="loginVideo">
+                <source src="LoginVid.mp4" type="video/mp4">
+            </video> 
 
-            <form>
+            <form class="login-registration-form">
+                <h3>Login Form</h3>
 
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username">
+                <div class="login-inputs">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password">
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="submit" value="Log in">
 
-                <input type="submit" value="Log in">
+                </div>
 
             </form>
 
