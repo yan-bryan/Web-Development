@@ -38,14 +38,7 @@ html {
 
 }
 
-.login-inputs {
-  display: grid;
-  grid-auto-flow: row;
-  gap: 4px;
-
-}
-
-.registration-input-fields {
+.input-fields {
   display: grid;
   grid-auto-flow: row;
   width: fit-content;

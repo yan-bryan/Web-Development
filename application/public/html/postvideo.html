@@ -21,29 +21,31 @@
 
         <main>
             <form class="post-video-form">
-                <h2>Post Video</h2>
+                <div class="input-fields">
+                    <h2>Post Video</h2>
 
-                <label for="video Title">Video Title</label>
-                <input type="text" name="video Title" id="video Title" placeholder="Video Title">
+                    <label for="video Title">Video Title</label>
+                    <input type="text" name="video Title" id="video Title" placeholder="Video Title">
 
-                <br>
+                    <input type="file" accept="video/mp4,video/webm,video/ogg" >
 
-                <input type="file" accept="video/mp4,video/webm,video/ogg" >
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" placeholder="Description">
 
-                <br>
+                    
+                </div>
 
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description" placeholder="Description">
+                <div class="check-boxes">
+                    <label for="acceptable Use Policy"> <a href="#" > Acceptable Use Policy </a></label>
+                    <input type="checkbox" name="acceptable Use Policy" id="acceptable Use Policy" placeholder="Acceptable Use Policy">
 
-                <br>
+                </div>
 
-                <label for="acceptable Use Policy"> <a href="#" > Acceptable Use Policy </a></label>
-                <input type="checkbox" name="acceptable Use Policy" id="acceptable Use Policy" placeholder="Acceptable Use Policy">
-
-                <br>
-                <br>
-
-                <input type="submit" value="Submit">
+                <div class="submit-button">
+                    <input type="submit" value="Submit">
+                    
+                </div>
+                
             </form>
         </main>
 
