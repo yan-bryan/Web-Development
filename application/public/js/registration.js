@@ -57,7 +57,7 @@ function checkPassword(password) {
         if(specialCheck == true && numberCheck == true && uppercaseCheck == true) {
             document.getElementById("passwordIsValid").innerHTML = "Your password is valid.";
             userPassword = password;
-            console.log(userPassword);
+            //console.log(userPassword);
             passwordIsGood = true;
             checkAllRequirements();
 
