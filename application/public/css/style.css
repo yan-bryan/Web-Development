@@ -17,15 +17,23 @@ html {
 
 }
 
+.photo-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  width: 100%;
 
-.main-welcome {
+}
+
+
+/*.main-welcome {
   position: fixed;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
   width: 100%;
   padding: 20px;
-}
+} */
 
 .login-registration-form{
   position: fixed;
