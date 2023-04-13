@@ -22,7 +22,12 @@ html {
   grid-template-columns: repeat(3, 1fr);
   height: 100%;
   width: 100%;
+  opacity: 1;
 
+}
+
+.photo-card {
+  transition: opacity 1s;
 }
 
 
