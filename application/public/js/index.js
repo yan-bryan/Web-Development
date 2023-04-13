@@ -32,7 +32,8 @@ async function fetchWithDOMAPI() {
     try{
         var response = await fetch(url);
         var data = await response.json();
-        counter = data.length;
+        counter = Object.keys(data).length;
+        document.getElementById('photo-counter').innerHTML = "Photo Counter: " + counter;
         //console.log(counter);
         var elements = data.map(buildCard);
         document.getElementById('photo-list').append(...elements);
@@ -53,8 +54,9 @@ function fadeOut(ev){
     //ev.currentTarget.remove();
     counter--;
     //console.log(counter);
+    document.getElementById('photo-counter').innerHTML = "Photo Counter: " + counter;
 
-    console.log(ele);
+    //console.log(ele);
 
     ele.style.opacity = '0';
     setTimeout( function() {
