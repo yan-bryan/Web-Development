@@ -22,7 +22,8 @@ function buildCard(data){
     cardDiv.appendChild(imgTag);
     
 
-    cardDiv.addEventListener("click", fadeOut);
+    cardDiv.addEventListener("click", fadeOut, {once:true});
+    
 
     return cardDiv;
 
@@ -51,17 +52,19 @@ fetchWithDOMAPI();
 
 function fadeOut(ev){
     var ele = ev.currentTarget;
+    
     //ev.currentTarget.remove();
-    counter--;
     //console.log(counter);
-    document.getElementById('photo-counter').innerHTML = "Photo Counter: " + counter;
-
     //console.log(ele);
 
     ele.style.opacity = '0';
     setTimeout( function() {
         ele.remove();
+        counter--;
+        document.getElementById('photo-counter').innerHTML = "Photo Counter: " + counter;
+        
     }, 1000);
 
+    
 
 }
