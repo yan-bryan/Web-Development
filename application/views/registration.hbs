@@ -1,0 +1,59 @@
+<main>
+    <video autoplay muted loop width="100%">
+        <source src="/public/html/RegistrationVid.mp4" type="video/mp4">
+
+    </video>
+
+    <form class="login-registration-form">
+        <div class="input-fields">
+            <h2>Registration Form</h2>
+
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Username"
+                oninput="checkUsername( document.getElementById('username').value )">
+            <p id="usernameIsValid">
+                Your username needs to start with a character and have three or more alphanumeric characters.
+            </p>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email">
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password"
+                oninput="checkPassword( document.getElementById('password').value ), checkConfirmPassword( document.getElementById('confirm password').value )">
+            <p id="passwordIsValid">
+                Your password needs to include at least one of the following special characters:/ * - + ! @ # $ ^ & ~ [
+                ] , one upper case letter, one number, and be 8 or more
+                characters long.
+            </p>
+
+            <label for="confirm password">Confirm password</label>
+            <input type="password" name="confirm password" id="confirm password" placeholder="Confirm password"
+                oninput="checkConfirmPassword( document.getElementById('confirm password').value )">
+            <p id="confirmPasswordIsValid"></p>
+
+        </div>
+
+        <div class="check-boxes">
+
+            <label for="i am 13+ years of age">I am 13+ years of age.</label>
+            <input type="checkbox" name="i am 13+ years of age" id="i am 13+ years of age"
+                placeholder="I am 13+ years of age" required>
+
+            <br>
+
+            <label for="accept TOS and Privacy"> Do you accept the <a href="#"> Privacy Rules </a> and <a href="#">
+                    Terms of Service</a> for using the website? </label>
+            <input type="checkbox" name="accept TOS and Privacy" id="accept TOS and Privacy"
+                placeholder="Accept TOS and Privacy" required>
+
+        </div>
+
+        <div class="submit-button">
+            <button id="submitButton"> Submit </button>
+
+        </div>
+
+    </form>
+
+</main>

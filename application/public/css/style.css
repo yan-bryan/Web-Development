@@ -69,6 +69,7 @@ nav ul{
   display: grid;
   grid-auto-flow: column;
   list-style: none;
+  background-color: var(--footer-header-bg);
 
 }
 
