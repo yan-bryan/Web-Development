@@ -10,6 +10,10 @@
 
 <body>
   <div id="container">
+    {{#if (nonEmptyObject messages) }}
+      {{> flashmessage this}}
+    {{/if}}
+    
     {{>header}}
     {{>nav}}
     {{{body}}}

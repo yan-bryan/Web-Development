@@ -1,10 +1,12 @@
+<script defer src="/public/js/registration.js"></script>
+
 <main>
     <video autoplay muted loop width="100%">
         <source src="/public/html/RegistrationVid.mp4" type="video/mp4">
 
     </video>
 
-    <form class="login-registration-form">
+    <form class="login-registration-form" action="/users/registration" method="POST" enctype="application/x-www-form-urlencoded">
         <div class="input-fields">
             <h2>Registration Form</h2>
 
@@ -28,7 +30,7 @@
             </p>
 
             <label for="confirm password">Confirm password</label>
-            <input type="password" name="confirm password" id="confirm password" placeholder="Confirm password"
+            <input type="password" name="confirmPassword" id="confirm password" placeholder="Confirm password"
                 oninput="checkConfirmPassword( document.getElementById('confirm password').value )">
             <p id="confirmPasswordIsValid"></p>
 
@@ -37,14 +39,14 @@
         <div class="check-boxes">
 
             <label for="i am 13+ years of age">I am 13+ years of age.</label>
-            <input type="checkbox" name="i am 13+ years of age" id="i am 13+ years of age"
+            <input type="checkbox" name="iAmThirteen" id="i am 13+ years of age"
                 placeholder="I am 13+ years of age" required>
 
             <br>
 
             <label for="accept TOS and Privacy"> Do you accept the <a href="#"> Privacy Rules </a> and <a href="#">
                     Terms of Service</a> for using the website? </label>
-            <input type="checkbox" name="accept TOS and Privacy" id="accept TOS and Privacy"
+            <input type="checkbox" name="acceptTosAndPrivacy" id="accept TOS and Privacy"
                 placeholder="Accept TOS and Privacy" required>
 
         </div>
