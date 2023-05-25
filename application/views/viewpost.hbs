@@ -1,20 +1,69 @@
 <main>
     <h2>View Post</h2>
+    {{log this}}
+    <video width="320" height="240" controls src="/{{this.currentPost.video}}" type="Video/mp4"></video>
 
-    <div class="Post Title">Title</div>
-    <video width="320" height="240" controls src="/public/html/sample-5s.mp4" type="Video/mp4"></video>
+    <div class="postInfo">
+        <p class="postTitle">Video title: {{this.currentPost.title}}</p>
+        <p class="Post author"> Author: {{this.currentPost.username}} </p>
+        <p class="Post creation time"> Creation Time: {{formatDateString this.currentPost.createdAt}} </p>
+        <p class="Post description"> Description: {{this.currentPost.description}} </p>
+    </div>
 
-    <div class="Post author"> Author </div>
-    <div class="Post creation time"> Creation Time </div>
+    <h2>Comment section</h2>
+    <div class="commentSection">
+        <div class="comment-box">
+            <textarea id="comment-text" class="comment-box-text"></textarea>
+            <button id="comment-button" class="fa fa-comment comment-box-button" aria-hidden="true"
+                data-postid="{{currentPost.id}}">Submit Comment</button>
+        </div>
+        <div id="comments" class="comments">
+            {{#each currentPost.comments}}
+            <div class="comment">
+                <strong class="commentAuthor">{{this.username}}</strong>
+                <p class="commentDate">{{formatDateString this.createdAt}}</p>
+                <div class="commentText">{{this.text}}</div>
+            </div>
+            {{/each}}
+        </div>
 
-    <section>
-        <h2>Comment section</h2>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </section>
+    </div>
+    <script>
+        document.getElementById("comment-button").addEventListener("click", function (ev) {
+            let commentText = document.getElementById("comment-text").value;
+
+            if (!commentText) return;
+            var postId = ev.currentTarget.dataset.postid;
+            fetch("/comments/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify(
+                    {
+                        postId: postId,
+                        comment: commentText
+                    }
+                )
+            })
+            .then(response => response.json())
+            .then(data => {
+                //console.log(data);
+                var comments = document.getElementById("comments");
+                let commentFragment = document.createElement('template');
+                commentFragment.innerHTML = 
+                `<div class="comment">
+                <strong class="commentAuthor">${data.username}</strong>
+                <p class="commentDate">${(new Date()).toLocaleString("en-us",{dateStyle:"long",timeStyle:"medium"})}</p>
+                <div class="commentText">${data.commentText}</div>
+                </div>`;
+                comments.append(commentFragment.content.firstChild);
+            })
+
+        })
+
+    </script>
+
 
 
 </main>

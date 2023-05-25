@@ -3,6 +3,7 @@ var router = express.Router();
 var db = require('../conf/database');
 var bcrypt = require('bcrypt');
 var { isLoggedIn, isMyProfile } = require("../middleware/auth");
+var {getPostsForUserBy} = require("../middleware/post");
 const { isUsernameUnique, isEmailUnique } = require('../middleware/validation');
 
 
@@ -104,13 +105,14 @@ router.use(function (req, res, next) {
 });
 
 
-router.get("/profile/:id(\\d+)", isLoggedIn, isMyProfile, function (req, res) {
-  res.render("profile");
+router.get("/profile/:id(\\d+)", isLoggedIn, isMyProfile, getPostsForUserBy, function (req, res) {
+  //console.log(res.locals);
+  return res.render("profile");
 })
 
-router.get("/viewpost/:id(\\d+)", isLoggedIn, isMyProfile, function (req, res) {
-  res.render("viewpost");
-})
+// router.get("/viewpost/:id(\\d+)", isLoggedIn, isMyProfile, function (req, res) {
+//   res.render("viewpost");
+// })
 
 router.get("/postvideo", isLoggedIn, function (req, res) {
   res.render("postvideo");

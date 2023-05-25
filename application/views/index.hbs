@@ -1,7 +1,22 @@
 <main id="main content">
-    <div id="photo-list" class="photo-list">
+    {{#each posts}}
+    {{log this}}
+    <div id="postCard" class="postCard">
+        <div class="postInfo">
+            <p class="postTitle">Video title: {{title}}</p>
+        </div>
+        <img class="thumbnail" src="/{{thumbnail}}">
+        <button type="submit" class="submit-button">
+            <a href='/post/{{id}}'>
+                Watch Video
+            </a>
+        </button>
+
+    </div>
+    {{/each}}
+    {{!-- <div id="photo-list" class="photo-list">
 
     </div>
 
-    <p id="photo-counter"></p>
+    <p id="photo-counter"></p> --}}
 </main>

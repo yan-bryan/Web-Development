@@ -28,6 +28,9 @@ app.engine(
     helpers: {
       nonEmptyObject: function(obj) {
         return obj && obj.constructor == Object && Object.keys(obj).length > 0;
+      },
+      formatDateString: function (dateString) {
+        return new Date(dateString).toLocaleString("en-us", {dateStyle:"long", timeStyle:"medium"});
       }
     }, //adding new helpers to handlebars for extra functionality
   })
@@ -69,7 +72,7 @@ app.use(function(req, res, next) {
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
-app.use("/posts", postsRouter);
+app.use("/post", postsRouter);
 app.use("/comments", commentsRouter);
 
 

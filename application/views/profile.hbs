@@ -2,12 +2,23 @@
 
 <div class="Username">{{user.username}}</div>
 <div class="Email">{{user.email}}</div>
-
+{{!-- {{log this}} --}}
+{{log post}}
 <section>
     <h2>Post made</h2>
-    <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ol>
+    <div id="postList" class="postList">
+        {{#each post}}
+        <div class="post">
+            <img class="postThumbnail" src="/{{thumbnail}}">
+            <strong class="postTitle">Video Title:{{title}}</strong>
+            <form action="/post/delete/{{id}}" method="post" >
+                <button class="deleteVideo" type="submit">
+                    <a >
+                        Delete
+                    </a>
+                </button>
+            </form>
+        </div>
+        {{/each}}
+    </div>
 </section>
