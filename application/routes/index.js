@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const { getRecentPosts } = require("../middleware/post");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CSC 317 App', name:"Bryan Yan" });
+router.get('/', getRecentPosts,  async function(req, res, next) {
+  console.log(res.locals.posts);
+  return res.render("index");
 });
 
 router.get("/login", function(req,res){

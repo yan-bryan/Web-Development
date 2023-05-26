@@ -1,7 +1,7 @@
 <h2>Profile</h2>
 
-<div class="Username">{{user.username}}</div>
-<div class="Email">{{user.email}}</div>
+<div class="Username">Username: {{user.username}}</div>
+<div class="Email">Email: {{user.email}}</div>
 {{!-- {{log this}} --}}
 {{log post}}
 <section>
@@ -13,7 +13,7 @@
             <strong class="postTitle">Video Title:{{title}}</strong>
             <form action="/post/delete/{{id}}" method="post" >
                 <button class="deleteVideo" type="submit">
-                    <a >
+                    <a>
                         Delete
                     </a>
                 </button>

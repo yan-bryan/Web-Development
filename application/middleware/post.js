@@ -59,7 +59,14 @@ module.exports = {
             next(error);
         }
     },
-    getRecentPosts: function (req, res, next) {
+    getRecentPosts: async function (req, res, next) {
+        try{
+            var [rows, _] = await db.execute('SELECT id, title, thumbnail FROM csc317db.posts ORDER BY createdAt DESC LIMIT 5;');
+            res.locals.posts= rows;
+            next();
+        } catch (error){
+            next(error);
+        }
 
     }
 };
